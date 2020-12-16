@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "650701470997",
+    "project_id": "fir-pj-c3215",
+    "storage_bucket": "fir-pj-c3215.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:650701470997:android:c5d0ad4c2bec801cb13d1c",
+        "android_client_info": {
+          "package_name": "com.example.android.firebaseui_login_sample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "650701470997-u7dn72h76tiu06pje2fc5ue7rctqt6js.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1v0Xno2BXAzz0JHlPo9w8Osp7NByyPqA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "650701470997-u7dn72h76tiu06pje2fc5ue7rctqt6js.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:650701470997:android:7808caba42dfaad7b13d1c",
+        "android_client_info": {
+          "package_name": "jp.co.cybermissions.search_jobapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "650701470997-u7dn72h76tiu06pje2fc5ue7rctqt6js.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1v0Xno2BXAzz0JHlPo9w8Osp7NByyPqA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "650701470997-u7dn72h76tiu06pje2fc5ue7rctqt6js.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
