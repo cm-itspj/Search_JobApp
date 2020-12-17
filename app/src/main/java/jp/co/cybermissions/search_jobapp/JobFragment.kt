@@ -20,6 +20,7 @@ class JobFragment : Fragment() {
             inflater,
             R.layout.fragment_job, container, false
         )
+
         return binding.root
     }
 }

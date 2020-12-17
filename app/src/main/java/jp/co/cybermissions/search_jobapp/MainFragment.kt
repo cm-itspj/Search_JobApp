@@ -24,6 +24,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -59,8 +60,12 @@ class MainFragment : Fragment() {
         observeAuthenticationState()
 
         //binding.authButton.setOnClickListener { launchSignInFlow() }
-        binding.settingsBtn.setOnClickListener {
-            val action = MainFragmentDirections.actionMainFragmentToSettingsFragment()
+//        binding.settingsBtn.setOnClickListener {
+//            val action = MainFragmentDirections.actionMainFragmentToSettingsFragment()
+//            findNavController().navigate(action)
+//        }
+                binding.joblist.setOnClickListener {
+            val action = MainFragmentDirections.actionMainFragmentToJobFragment()
             findNavController().navigate(action)
         }
     }
@@ -84,7 +89,7 @@ class MainFragment : Fragment() {
         }
     }
     private fun observeAuthenticationState() {
-        val factToDisplay = viewModel.getFactToDisplay(requireContext())
+//        val factToDisplay = viewModel.getFactToDisplay(requireContext())
 
         viewModel.authenticationState.observe(viewLifecycleOwner, Observer { authenticationState ->
             when (authenticationState) {
@@ -95,10 +100,7 @@ class MainFragment : Fragment() {
                     binding.settingsBtn.setOnClickListener {
                         AuthUI.getInstance().signOut(requireContext())
                     }
-
-                      binding.joblist.setOnClickListener { view: View ->
-                        view.findNavController().navigate(R.id.action_mainFragment_to_jobFragment)
-                    }
+                    binding.joblist.isVisible = true
                 }
                 else -> {
 //                    binding.welcomeText.text = factToDisplay
@@ -107,6 +109,7 @@ class MainFragment : Fragment() {
                     binding.settingsBtn.setOnClickListener {
                         launchSignInFlow()
                     }
+                    binding.joblist.isVisible = false
                 }
             }
         })
@@ -124,17 +127,9 @@ class MainFragment : Fragment() {
     }
 
     private fun launchSignInFlow() {
-        // Give users the option to sign in / register with their email
-        // If users choose to register with their email,
-        // they will need to create a password as well
         val providers = arrayListOf(
             AuthUI.IdpConfig.EmailBuilder().build(), AuthUI.IdpConfig.GoogleBuilder().build()
-            //
         )
-
-        // Create and launch sign-in intent.
-        // We listen to the response of this activity with the
-        // SIGN_IN_RESULT_CODE code
         startActivityForResult(
             AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(
                     providers
